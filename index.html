@@ -1,0 +1,20 @@
+<body>
+    website working
+    <a id="skip_in_app_browser" style="display: none;" href="#" target="_blank">Open in external browser</a>
+</body>
+<script>
+    // var anchor = document.getElementById("skip_in_app_browser");
+    // anchor.href = 
+    var ua = navigator.userAgent || navigator.vendor;
+    var isInstagram = ua.indexOf('Instagram') > -1;
+    var str = navigator.userAgent;
+    var i = str.indexOf("Instagram");
+    if (isInstagram) {
+        if (/iPad|iPhone|iPod/.test(ua)) 
+            window.location.href = window.location.href.replace("http:", "googlechrome:");
+        else {
+            window.location.href = `intent:${window.location.href}#Intent;package=com.android.chrome;end`;
+            window.history.back()
+        }
+    }
+</script> 
