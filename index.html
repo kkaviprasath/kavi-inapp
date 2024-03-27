@@ -11,7 +11,7 @@
     var i = str.indexOf("Instagram");
     if (isInstagram) {
         if (/iPad|iPhone|iPod/.test(ua)) 
-            window.location.href = window.location.href.replace("http:", "googlechrome:");
+            window.location.href = window.location.href.replace("https:", "googlechrome:");
         else {
             window.location.href = `intent:${window.location.href}#Intent;package=com.android.chrome;end`;
             window.history.back()
